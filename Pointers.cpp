@@ -3,11 +3,14 @@ using namespace std;
 
 int main()
 {
-    int a = 10;
-    int &r = a;
+    int *p;
+    p = (int *) malloc(5 * sizeof(int)); //C Method to create an array in heap
+    p = new int[5]; //C++ Method to create an array in heap
+    p[0] = 10; p[1] = 15; p[2] = 20; p[3] = 25; p[4] = 30;
+    
+    for (int i = 0; i < 5; i++) cout << p[i] << endl;
 
-    int b = 30;
-    r = b;
-    cout << a << endl << r << endl;
+    delete []p; //Deallocating the memory that is created in heap C++
+    free(p); //Deallocating the memory that is created in heap C
     return 0;
 }
