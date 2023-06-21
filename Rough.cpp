@@ -1,23 +1,18 @@
 #include <iostream>
 using namespace std;
 
-int fun(int n)
+void fun()
 {
-    int x = 1, k;
+    int size;
+    cin >> size;
+    int y[size];
 
-    if (n == 1)
-        return x;
-
-    for (k = 1; k < n; ++k)
-        x = x + fun(k) * fun(n - k);
-
-    return x;
+    for (int i = 0; i < size; i++) cout << y[i] << " ";
 }
 
 int main()
 
 {
-    int p = 5;
-    cout << fun(p) << endl;
+    fun();
     return 0;
 }
